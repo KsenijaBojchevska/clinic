@@ -31,7 +31,7 @@
 </head>
 
 <body><?php
-    /*   require_once __DIR__ . "/../menu.php"; */
+   
     ?><form method="POST" action="login.php" id="form_login">
         <h1>Login</h1><label>Username</label><br /><input type="text"
             name="username" /><br /><label>Password</label><br /><input type="password"

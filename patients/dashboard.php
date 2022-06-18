@@ -1,6 +1,7 @@
 <?php
-require_once __DIR__ . "/../db.php";
-require_once __DIR__ . "/../functions.php";
+require_once __DIR__ . "/../autoload.php";
+$loggedIn = isset($_SESSION['email']);
+
 
 $sql = "SELECT * FROM patients";
 $stmt = $pdo->query($sql);
@@ -27,7 +28,10 @@ $stmt = $pdo->query($sql);
 <body>
     <div class="center">
 
+
+
         <a href="<?= APP_URL ?>/clinic/patients/add.php" class="addBtn">Add new patient</a>
+
         <div class="container">
             <table class="tablePatients">
                 <thead>

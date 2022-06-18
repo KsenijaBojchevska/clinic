@@ -9,3 +9,10 @@ create table  patients (
     
     CONSTRAINT PRIMARY KEY(id)
 );
+
+CREATE TABLE users (
+    id INT UNSIGNED AUTO_INCREMENT,
+    email VARCHAR(64),
+    password VARCHAR(256),
+    CONSTRAINT PRIMARY KEY(id)
+);
