@@ -20,6 +20,14 @@ html {
         border-radius: 4px;
     }
     
+    input[type=password] {
+        width: 100%;
+        padding: 6px 12px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border-radius: 4px;
+    }
+    
     .center {
         margin: 4%;
     }
@@ -30,7 +38,9 @@ html {
     
     .addBtn,
     .createBtn,
-    .updateBtn {
+    .updateBtn,
+    .loginBtn,
+    .registerBtn {
         background-color: white;
         color: black;
         border: 2px solid #180c0c;
@@ -49,6 +59,16 @@ html {
     }
     
     .updateBtn:hover {
+        background-color: black;
+        color: white;
+    }
+    
+    .loginBtn:hover {
+        background-color: black;
+        color: white;
+    }
+    
+    .registerBtn:hover {
         background-color: black;
         color: white;
     }
