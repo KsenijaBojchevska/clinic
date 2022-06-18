@@ -28,9 +28,8 @@ $stmt = $pdo->query($sql);
 <body>
     <div class="center">
 
-
-
         <a href="<?= APP_URL ?>/clinic/patients/add.php" class="addBtn">Add new patient</a>
+        <a href="../auth/logout.php" class="addBtn">Logout</a>
 
         <div class="container">
             <table class="tablePatients">
