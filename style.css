@@ -28,6 +28,14 @@ html {
         border-radius: 4px;
     }
     
+    input[type=search] {
+        width: 100%;
+        padding: 6px 12px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border-radius: 4px;
+    }
+    
     .center {
         margin: 4%;
     }
@@ -52,6 +60,8 @@ html {
         background-color: black;
         color: white;
     }
+    
+    .searchBtn {}
     
     .createBtn:hover {
         background-color: black;

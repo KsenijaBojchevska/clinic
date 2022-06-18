@@ -1,10 +1,29 @@
 <?php
 require_once __DIR__ . "/../autoload.php";
-$loggedIn = isset($_SESSION['email']);
+
+ $loggedIn = isset($_SESSION['email']); 
 
 
 $sql = "SELECT * FROM patients";
 $stmt = $pdo->query($sql);
+
+if (isset($_GET['search-term']) && !empty($_GET['search-term'])) {
+    $searchTerm = strtolower($_GET['search-term']);
+    $sql = "SELECT patients.* 
+    FROM patients 
+    WHERE 
+        LOWER(patients.id) LIKE :searchterm
+        
+        ";
+
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(['searchterm' => "%$searchTerm%"]);
+} else {
+    $sql = "SELECT patients.*
+        FROM patients ";
+    $stmt = $pdo->query($sql);
+}
+
 
 ?>
 
@@ -17,12 +36,7 @@ $stmt = $pdo->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../style.css">
-    <!--  <style>
-    td {
-        border: 1px solid black;
-        padding: 10px;
-    }
-    </style> -->
+
 </head>
 
 <body>
@@ -30,6 +44,14 @@ $stmt = $pdo->query($sql);
 
         <a href="<?= APP_URL ?>/clinic/patients/add.php" class="addBtn">Add new patient</a>
         <a href="../auth/logout.php" class="addBtn">Logout</a>
+
+        <form class="" method="GET" action="dashboard.php">
+
+            <input name="search-term" class="inputSearch" type="search" placeholder="Search" aria-label="Search"
+                value="<?= isset($_GET['search-term']) ? $_GET['search-term'] : '' ?>">
+            <button class="searchBtn" type="submit">Search</button>
+        </form>
+
 
         <div class="container">
             <table class="tablePatients">

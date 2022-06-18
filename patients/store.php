@@ -1,6 +1,8 @@
 <?php
 
-require_once __DIR__ . "/../db.php";
+require_once __DIR__ . "/../autoload.php";
+authOnly();
+
 
 
 $sql = "INSERT INTO patients(`name`, `email`, `phoneNumber` , `address` , `medicalCondition` , `bloodType`) 

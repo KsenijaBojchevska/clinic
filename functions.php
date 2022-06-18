@@ -14,7 +14,7 @@ function decrypt($text)
 function authOnly()
 {
     if (!isset($_SESSION['email'])) {
-        header("Location: " . APP_URL . "/patients/dashboard.php");
+        header("Location: " . APP_URL . "/clinic/patients/dashboard.php");
         die();
     }
 }
